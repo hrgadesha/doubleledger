@@ -1,5 +1,6 @@
 frappe.ui.form.on('Payment Entry',{
 	party: function(frm){
+		if (frm.doc.party_type == "Customer" || frm.doc.party_type == "Supplier"){
 		if (frm.doc.party)	{
 				frappe.call({
 				method: "doubleledger.utils.payment_entry.get_party_primary_role",
@@ -17,4 +18,5 @@ frappe.ui.form.on('Payment Entry',{
 			})
 		}
 	}
-})
+}
+});
