@@ -83,6 +83,7 @@ def create_invoice_adj_jv(self,cdt):
                 'account': customer_account_type,
                 'party_type': primary_role_dp,
                 'party': customer_dp,
+                'cost_center': doc.cost_center,
                 'credit_in_account_currency': doc.outstanding_amount,
                 'is_advance': 'Yes'
             })
@@ -91,6 +92,7 @@ def create_invoice_adj_jv(self,cdt):
                 'account': supplier_account_type,
                 'party_type': 'Supplier',
                 'party': supplier_dp,
+                'cost_center': doc.cost_center,
                 'debit_in_account_currency': doc.outstanding_amount,
                 'reference_type': 'Purchase Invoice',
                 'reference_name': doc.name
